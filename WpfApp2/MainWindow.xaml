@@ -1,0 +1,86 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl Background="LightSalmon">
+            <TabItem Header="Játék">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="22*"/>
+                        
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnMentes"
+                            Content="Mentés"
+                            Width="100"
+                            Height="50"
+                            HorizontalAlignment="Left"
+                            Grid.ColumnSpan="4" Margin="0,22,0,22" Click="btnMentes_Click"/>
+                    <Button x:Name="btnBetoltes"
+                            Tag="1"
+                            Content="Betöltés" 
+                            Width="100px"
+                            Click="btnBetoltes_Click"
+                            Grid.Column="3" 
+                            Margin="66,0,149,312"
+                            Grid.RowSpan="2" />
+
+
+                    <ListBox x:Name="lbJatek"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="5"
+                 Background="LightBlue"></ListBox>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Ösvény szerkeztő">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                  
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Content="Betölt"
+                            Tag="2"
+                            Width="100"
+                            Height="50"
+                            HorizontalAlignment="Left"
+                            Margin="11,22,0,22" x:Name="btnBetoltszerkeszto" Grid.Column="1" Click="btnBetoltes_Click" />
+                    <Button Content="Mentés"                        
+                            Width="100"
+                            Height="50"
+                            HorizontalAlignment="Left"
+                            Margin="268,22,0,22" Grid.Column="1"/>
+                    
+                    <Button Content="Új Ösvény"
+                            Grid.Column="1"
+                            Height="50"
+                            Width="100"
+                            x:Name="btnUjOsveny" Click="btnUjOsveny_Click"/>
+                    
+                    <ListBox x:Name="lbPalyaszerkeszto"
+                             Grid.Row="1"
+                             Grid.ColumnSpan="1" MouseDoubleClick="lbPalyaszerkeszto_MouseDoubleClick"/>
+                    <TextBox x:Name="txtSzerkeszto" Grid.Row="1" Grid.Column="2" />
+                    <Button x:Name="btnSormentes"
+                            Content="Sor mentése" Click="btnSormentes_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
